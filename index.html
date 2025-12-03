@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumina Books | Modern Book Store</title>
+
+    <!-- 1. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Remix Icons (For UI Icons) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+
+  <body>
+    <!-- navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">
+          <i class="ri-book-open-line"> </i>
+          Lumina <span>Books</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#" class="activev">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" placeholder="Search books...">
+                <button class="icon-btn" id="search-btn" <i class="ri-search-line"></i></button>
+            </div>
+            
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
+
+            <button class="icon-btn" id="whislist-btn" aria-label="Whishlist">
+                <i class="ri-heart-line"></i>
+            </button>
+
+            <button class="icon-btn" id="cart-btn" aria-label="Open Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+
+            <button class="icon-btn" id="user-btn" arial-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+
+            <button class="icon-btn mobile-toggle" id="mobile-menu-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="Hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Next <br><span>Great Adventure</span></h1>
+                <p class="hero-subtitle">
+                    Explore our curated collection of bestsellers, timeless classics, and hidden gems tailored just for you.
+                </p>
+                <a href="#shop" class="btn-primary">Start Reading</a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="book-placeholder">
+                    <i class="ri-book-3-line" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                    <h3>Book Of The Month</h3>
+                    <p style="font-size: 0.9rem;opacity: 0.8;">The Art of code</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Home section -->
+    <!-- category strip -->
+    <!-- main shop layout -->
+    <!-- extra section -->
+  </body>
+</html>
