@@ -1,108 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumina Books | Modern Book Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Books | Modern Book Store</title>
+    
+    <!-- 1. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. Remix Icons (For UI Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
-  <!-- 1. Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
-    rel="stylesheet" />
-
-  <!-- 2. Remix Icons (For UI Icons) -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css" />
-<script src="script.js"></script>
-
 <body>
-  <!-- navigation bar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">
-        <i class="ri-book-open-line"> </i>
-        Lumina <span>Books</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#" class="activev">Home</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-      </ul>
 
-      <div class="nav-actions">
-        <div class="search-wrapper">
-          <input type="text" id="search-input" placeholder="Search books...">
-          <button class="icon-btn" id="search-btn" <i class="ri-search-line"></i></button>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            
+            <!-- 1. Brand / Logo -->
+            <a href="#" class="logo">
+                <i class="ri-book-open-line"></i>
+                Lumina<span>Books</span>
+            </a>
+
+            <!-- 2. Middle Navigation Links (Desktop) -->
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <!-- 3. Action Hub (Right Side) -->
+            <div class="nav-actions">
+                
+                <!-- Search Bar -->
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="Search books...">
+                    <button class="icon-btn" id="search-btn"><i class="ri-search-line"></i></button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="ri-moon-line"></i>
+                </button>
+
+                <!-- Wishlist -->
+                <button class="icon-btn" id="wishlist-btn" aria-label="Wishlist">
+                    <i class="ri-heart-line"></i>
+                </button>
+
+                <!-- Cart with Counter -->
+                <button class="icon-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class="ri-shopping-bag-line"></i>
+                    <!-- This span is CRITICAL for JS to update cart count -->
+                    <span class="badge" id="cart-count">0</span>
+                </button>
+
+                <!-- User Profile -->
+                <button class="icon-btn" id="user-btn" aria-label="User Account">
+                    <i class="ri-user-line"></i>
+                </button>
+
+                <!-- Mobile Menu Hamburger (Visible only on small screens) -->
+                <button class="icon-btn mobile-toggle" id="mobile-menu-btn">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
         </div>
+    </nav>
 
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle Dark Mode"><i class="ri-moon-line"></i></button>
-
-        <button class="icon-btn" id="whislist-btn" aria-label="Whishlist">
-          <i class="ri-heart-line"></i>
-        </button>
-
-        <button class="icon-btn" id="cart-btn" aria-label="Open Cart">
-          <i class="ri-shopping-bag-line"></i>
-          <span class="badge" id="cart-count">0</span>
-        </button>
-
-        <button class="icon-btn" id="user-btn" arial-label="User Account">
-          <i class="ri-user-line"></i>
-        </button>
-
-        <button class="icon-btn mobile-toggle" id="mobile-menu-btn">
-          <i class="ri-menu-line"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <header class="Hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">Discover Your Next <br><span>Great Adventure</span></h1>
-        <p class="hero-subtitle">
-          Explore our curated collection of bestsellers, timeless classics, and hidden gems tailored just for you.
-        </p>
-        <a href="#shop" class="btn-primary">Start Reading</a>
-      </div>
-
-      <div class="hero-visual">
-        <div class="book-placeholder">
-          <i class="ri-book-3-line" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-          <h3>Book Of The Month</h3>
-          <p style="font-size: 0.9rem;opacity: 0.8;">The Art of code</p>
+    <!-- HERO HEADER -->
+    <header class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Next <br><span>Great Adventure</span></h1>
+                <p class="hero-subtitle">
+                    Explore our curated collection of bestsellers, timeless classics, and hidden gems tailored just for you.
+                </p>
+                <a href="#shop" class="btn-primary">Start Reading</a>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Placeholder for the slider or featured book -->
+                <div class="book-placeholder">
+                    <i class="ri-book-3-line" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                    <h3>Book of the Month</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">The Art of Code</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
-  <section class="category-strip">
-    <div class="container">
-      <div class="category-list" id="category-filters">
-        <button class="cat-pill active" data-category="all">All Books</button>
-        <button class="cat-pill active" data-category="Trending">Trending</button>
-        <button class="cat-pill active" data-category="fiction">Fiction</button>
-        <button class="cat-pill active" data-category="non-fiction">Non-Fiction</button>
-        <button class="cat-pill active" data-category="sci-fi">Sci-Fi & Fantasy</button>
-                  <button class="cat-pill active" data-category="romance">Romance</button>
-                            <button class="cat-pill active" data-category="biography">Biography</button>
-                                      <button class="cat-pill active" data-category="history">History</button>
+    </header>
 
-          <button class="cat-pill active" data-category="kids">Kids</button>
+    <!-- CATEGORY STRIP -->
+    <section class="category-strip">
+        <div class="container">
+            <div class="category-list" id="category-filters">
+                <!-- We add 'active' to 'All' by default -->
+                <button class="cat-pill active" data-category="all">All Books</button>
+                <button class="cat-pill" data-category="trending">🔥 Trending</button>
+                <button class="cat-pill" data-category="fiction">Fiction</button>
+                <button class="cat-pill" data-category="non-fiction">Non-Fiction</button>
+                <button class="cat-pill" data-category="sci-fi">Sci-Fi & Fantasy</button>
+                <button class="cat-pill" data-category="romance">Romance</button>
+                <button class="cat-pill" data-category="biography">Biography</button>
+                <button class="cat-pill" data-category="history">History</button>
+                <button class="cat-pill" data-category="kids">Kids</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- MAIN SHOP SECTION -->
+    <main class="shop-section" id="shop">
+        <div class="container shop-layout">
+            
+            <!-- SIDEBAR FILTERS -->
+            <aside class="sidebar">
+                <!-- Genre Filter -->
+                <div class="filter-group">
+                    <div class="filter-title">Genres</div>
+                    <ul class="filter-list" id="sidebar-filters">
+                        <!-- JS will populate active states, but here is the structure -->
+                        <li class="active">All Genres <span class="count">120</span></li>
+                        <li>Fiction <span class="count">45</span></li>
+                        <li>Non-Fiction <span class="count">30</span></li>
+                        <li>Sci-Fi <span class="count">15</span></li>
+                        <li>History <span class="count">12</span></li>
+                    </ul>
+                </div>
 
-      </div>
-    </div>
-  </section>
-  <!-- main shop layout -->
-  <!-- extra section -->
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <div class="filter-title">Price Range</div>
+                    <div class="price-slider-container">
+                        <input type="range" min="0" max="100" value="100" class="price-range" id="price-range">
+                        <div class="price-values">
+                            <span>$0</span>
+                            <span id="price-value">$100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="filter-group">
+                    <div class="filter-title">Rating</div>
+                    <ul class="filter-list">
+                        <li>⭐⭐⭐⭐⭐ (12)</li>
+                        <li>⭐⭐⭐⭐ & Up (45)</li>
+                        <li>⭐⭐⭐ & Up (80)</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- PRODUCT GRID AREA -->
+            <section class="shop-content">
+                <!-- Header: Count & Sort -->
+                <div class="shop-header">
+                    <h2 id="result-count">Showing all books</h2>
+                    <select class="sort-select" id="sort-select">
+                        <option value="popularity">Sort by: Popularity</option>
+                        <option value="newest">Sort by: Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <!-- The Grid: JS will inject cards here -->
+                <div class="products-grid" id="product-grid">
+                    
+                    <!-- STATIC EXAMPLE CARD 1 (For visual check) -->
+                    <div class="product-card">
+                        <div class="card-image">
+                            <!-- Placeholder image -->
+                            <div style="font-size: 3rem; color: #ccc;"><i class="ri-book-2-fill"></i></div>
+                            <button class="wishlist-icon"><i class="ri-heart-line"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-category">Fiction</div>
+                            <h3 class="card-title">The Midnight Library</h3>
+                            <p class="card-author">Matt Haig</p>
+                            <div class="card-footer">
+                                <span class="price">$24.99</span>
+                                <button class="add-cart-btn"><i class="ri-shopping-cart-2-line"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATIC EXAMPLE CARD 2 -->
+                    <div class="product-card">
+                        <div class="card-image">
+                            <div style="font-size: 3rem; color: #ccc;"><i class="ri-book-2-fill"></i></div>
+                            <button class="wishlist-icon"><i class="ri-heart-line"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-category">Sci-Fi</div>
+                            <h3 class="card-title">Dune</h3>
+                            <p class="card-author">Frank Herbert</p>
+                            <div class="card-footer">
+                                <span class="price">$18.50</span>
+                                <button class="add-cart-btn"><i class="ri-shopping-cart-2-line"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- STATIC EXAMPLE CARD 3 -->
+                     <div class="product-card">
+                        <div class="card-image">
+                            <div style="font-size: 3rem; color: #ccc;"><i class="ri-book-2-fill"></i></div>
+                            <button class="wishlist-icon"><i class="ri-heart-line"></i></button>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-category">Business</div>
+                            <h3 class="card-title">Atomic Habits</h3>
+                            <p class="card-author">James Clear</p>
+                            <div class="card-footer">
+                                <span class="price">$16.00</span>
+                                <button class="add-cart-btn"><i class="ri-shopping-cart-2-line"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Rest of the app will go here... -->
+
 </body>
-
 </html>
