@@ -1,406 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumina Books | Modern Book Store</title>
+    
+    <!-- 1. External CSS Link -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- 1. Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- 2. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- 3. Remix Icons (For UI Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
 
-    <!-- 2. Remix Icons (For UI Icons) -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
     <!-- NAVIGATION BAR -->
     <nav class="navbar">
-      <div class="container">
-        <!-- Logo -->
-        <a href="#" class="logo"
-          ><i class="ri-book-open-line"></i> Lumina<span>Books</span></a
-        >
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo"><i class="ri-book-open-line"></i> Lumina<span>Books</span></a>
 
-        <!-- Links -->
-        <ul class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
+            <!-- Links -->
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
 
-        <!-- Actions -->
-        <div class="nav-actions">
-          <div class="search-wrapper">
-            <button class="icon-btn"><i class="ri-search-line"></i></button>
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search books..."
-            />
-          </div>
+            <!-- Actions -->
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button class="icon-btn"><i class="ri-search-line"></i></button>
+                    <input type="text" id="search-input" placeholder="Search books...">
+                </div>
 
-          <button class="icon-btn" id="theme-toggle">
-            <i class="ri-moon-line"></i>
-          </button>
-          <button class="icon-btn" id="wishlist-btn">
-            <i class="ri-heart-line"></i>
-          </button>
+                <button class="icon-btn" id="theme-toggle"><i class="ri-moon-line"></i></button>
+                <button class="icon-btn" id="wishlist-btn"><i class="ri-heart-line"></i></button>
+                
+                <button class="icon-btn" id="cart-btn">
+                    <i class="ri-shopping-bag-line"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </button>
 
-          <button class="icon-btn" id="cart-btn">
-            <i class="ri-shopping-bag-line"></i>
-            <span class="badge" id="cart-count">0</span>
-          </button>
-
-          <button class="icon-btn" id="user-btn">
-            <i class="ri-user-line"></i>
-          </button>
-          <button class="icon-btn mobile-toggle" id="mobile-menu-btn">
-            <i class="ri-menu-line"></i>
-          </button>
+                <button class="icon-btn" id="user-btn"><i class="ri-user-line"></i></button>
+                <button class="icon-btn mobile-toggle" id="mobile-menu-btn"><i class="ri-menu-line"></i></button>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- HERO HEADER -->
     <header class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Discover Your Next <br /><span>Great Adventure</span>
-          </h1>
-          <p class="hero-subtitle">
-            Explore our curated collection of bestsellers, timeless classics,
-            and hidden gems tailored just for you.
-          </p>
-          <a href="#shop" class="btn-primary"
-            >Start Reading <i class="ri-arrow-right-line"></i
-          ></a>
-        </div>
-
-        <div class="hero-visual">
-          <div class="book-placeholder">
-            <i
-              class="ri-book-3-line"
-              style="font-size: 5rem; margin-bottom: 1rem; opacity: 0.9"
-            ></i>
-            <h3 style="font-size: 1.5rem">Book of the Month</h3>
-            <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 0.5rem">
-              The Art of Code
-            </p>
-            <div
-              style="
-                margin-top: 2rem;
-                font-size: 0.9rem;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                padding: 5px 15px;
-                border-radius: 20px;
-              "
-            >
-              Featured
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Next <br><span>Great Adventure</span></h1>
+                <p class="hero-subtitle">
+                    Explore our curated collection of bestsellers, timeless classics, and hidden gems tailored just for you.
+                </p>
+                <a href="#shop" class="btn-primary">Start Reading <i class="ri-arrow-right-line"></i></a>
             </div>
-          </div>
+            
+            <div class="hero-visual">
+                <div class="book-placeholder">
+                    <i class="ri-book-3-line" style="font-size: 5rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.5rem;">Book of the Month</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 0.5rem;">The Art of Code</p>
+                    <div style="margin-top: 2rem; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.3); padding: 5px 15px; border-radius: 20px;">Featured</div>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
     <!-- CATEGORY STRIP -->
     <section class="category-strip">
-      <div class="container">
-        <div class="category-list" id="category-filters">
-          <button class="cat-pill active" data-category="all">All Books</button>
-          <button class="cat-pill" data-category="trending">🔥 Trending</button>
-          <button class="cat-pill" data-category="fiction">Fiction</button>
-          <button class="cat-pill" data-category="non-fiction">
-            Non-Fiction
-          </button>
-          <button class="cat-pill" data-category="sci-fi">
-            Sci-Fi & Fantasy
-          </button>
-          <button class="cat-pill" data-category="romance">Romance</button>
-          <button class="cat-pill" data-category="biography">Biography</button>
-          <button class="cat-pill" data-category="history">History</button>
-          <button class="cat-pill" data-category="kids">Kids</button>
+        <div class="container">
+            <div class="category-list" id="category-filters">
+                <button class="cat-pill active" data-category="all">All Books</button>
+                <button class="cat-pill" data-category="trending">🔥 Trending</button>
+                <button class="cat-pill" data-category="fiction">Fiction</button>
+                <button class="cat-pill" data-category="non-fiction">Non-Fiction</button>
+                <button class="cat-pill" data-category="sci-fi">Sci-Fi & Fantasy</button>
+                <button class="cat-pill" data-category="romance">Romance</button>
+                <button class="cat-pill" data-category="biography">Biography</button>
+                <button class="cat-pill" data-category="history">History</button>
+                <button class="cat-pill" data-category="kids">Kids</button>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- MAIN SHOP SECTION -->
     <main class="shop-section" id="shop">
-      <div class="container shop-layout">
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-          <div class="filter-group">
-            <div class="filter-title">
-              Genres <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <ul class="filter-list" id="sidebar-filters">
-              <li class="active">
-                All Genres
-                <span
-                  style="
-                    font-size: 0.8rem;
-                    background: #f0f0f0;
-                    padding: 2px 6px;
-                    border-radius: 4px;
-                  "
-                  >120</span
-                >
-              </li>
-              <li>Fiction <span>45</span></li>
-              <li>Non-Fiction <span>30</span></li>
-              <li>Sci-Fi <span>15</span></li>
-              <li>History <span>12</span></li>
-            </ul>
-          </div>
-
-          <div class="filter-group">
-            <div class="filter-title">Price Range</div>
-            <div class="price-slider-container">
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value="100"
-                class="price-range"
-                id="price-range"
-              />
-              <div class="price-values">
-                <span>$0</span>
-                <span
-                  id="price-value"
-                  style="font-weight: 700; color: var(--primary)"
-                  >$100</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-group">
-            <div class="filter-title">Rating</div>
-            <ul class="filter-list">
-              <li><span style="color: #ffb800">⭐⭐⭐⭐⭐</span> (12)</li>
-              <li><span style="color: #ffb800">⭐⭐⭐⭐</span> & Up (45)</li>
-            </ul>
-          </div>
-        </aside>
-
-        <!-- PRODUCT GRID -->
-        <section class="shop-content">
-          <div class="shop-header">
-            <h2 id="result-count" style="font-size: 1.25rem">
-              Showing all books
-            </h2>
-            <select class="sort-select" id="sort-select">
-              <option value="popularity">Sort by: Popularity</option>
-              <option value="newest">Sort by: Newest</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-            </select>
-          </div>
-
-          <div class="products-grid" id="product-grid">
-            <!-- Card 1 -->
-            <div class="product-card">
-              <div class="card-image">
-                <i class="ri-book-2-fill"></i>
-                <button class="wishlist-icon">
-                  <i class="ri-heart-line"></i>
-                </button>
-              </div>
-              <div class="card-info">
-                <div class="card-category">Fiction</div>
-                <h3 class="card-title">The Midnight Library</h3>
-                <p class="card-author">Matt Haig</p>
-                <div class="card-footer">
-                  <span class="price">$24.99</span>
-                  <button class="add-cart-btn">
-                    <i class="ri-add-line"></i> Add
-                  </button>
+        <div class="container shop-layout">
+            
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <div class="filter-title">Genres <i class="ri-arrow-down-s-line"></i></div>
+                    <ul class="filter-list" id="sidebar-filters">
+                        <li class="active">All Genres <span style="font-size:0.8rem; background:#f0f0f0; padding:2px 6px; border-radius:4px;">120</span></li>
+                        <li>Fiction <span>45</span></li>
+                        <li>Non-Fiction <span>30</span></li>
+                        <li>Sci-Fi <span>15</span></li>
+                        <li>History <span>12</span></li>
+                    </ul>
                 </div>
-              </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="product-card">
-              <div class="card-image">
-                <i class="ri-book-2-fill"></i>
-                <button class="wishlist-icon">
-                  <i class="ri-heart-line"></i>
-                </button>
-              </div>
-              <div class="card-info">
-                <div class="card-category">Sci-Fi</div>
-                <h3 class="card-title">Dune</h3>
-                <p class="card-author">Frank Herbert</p>
-                <div class="card-footer">
-                  <span class="price">$18.50</span>
-                  <button class="add-cart-btn">
-                    <i class="ri-add-line"></i> Add
-                  </button>
+                <div class="filter-group">
+                    <div class="filter-title">Price Range</div>
+                    <div class="price-slider-container">
+                        <input type="range" min="0" max="100" value="100" class="price-range" id="price-range">
+                        <div class="price-values">
+                            <span>$0</span>
+                            <span id="price-value" style="font-weight:700; color:var(--primary);">$100</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="product-card">
-              <div class="card-image">
-                <i class="ri-book-2-fill"></i>
-                <button class="wishlist-icon">
-                  <i class="ri-heart-line"></i>
-                </button>
-              </div>
-              <div class="card-info">
-                <div class="card-category">Business</div>
-                <h3 class="card-title">Atomic Habits</h3>
-                <p class="card-author">James Clear</p>
-                <div class="card-footer">
-                  <span class="price">$16.00</span>
-                  <button class="add-cart-btn">
-                    <i class="ri-add-line"></i> Add
-                  </button>
+                <div class="filter-group">
+                    <div class="filter-title">Rating</div>
+                    <ul class="filter-list">
+                        <li><span style="color:#FFB800">⭐⭐⭐⭐⭐</span> (12)</li>
+                        <li><span style="color:#FFB800">⭐⭐⭐⭐</span> & Up (45)</li>
+                    </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+            </aside>
+
+            <!-- PRODUCT GRID -->
+            <section class="shop-content">
+                <div class="shop-header">
+                    <h2 id="result-count" style="font-size: 1.25rem;">Showing all books</h2>
+                    <select class="sort-select" id="sort-select">
+                        <option value="popularity">Sort by: Popularity</option>
+                        <option value="newest">Sort by: Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div class="products-grid" id="product-grid">
+                    <!-- Cards will be injected by script.js -->
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- RECOMMENDATIONS -->
     <section class="recommendations">
-      <div class="container">
-        <h2 class="section-title-center">Recommended For You</h2>
-        <div class="products-grid">
-          <!-- Static Rec Cards (Simplified) -->
-          <div class="product-card">
-            <div class="card-image"><i class="ri-book-2-fill"></i></div>
-            <div class="card-info">
-              <div class="card-category">History</div>
-              <h3 class="card-title">Sapiens</h3>
-              <div class="card-footer">
-                <span class="price">$22.00</span>
-                <button class="add-cart-btn">Add</button>
-              </div>
+        <div class="container">
+            <h2 class="section-title-center">Recommended For You</h2>
+            <div class="products-grid">
+                <!-- Static Rec Cards (Simplified) -->
+                <div class="product-card">
+                    <div class="card-image"><i class="ri-book-2-fill"></i></div>
+                    <div class="card-info">
+                        <div class="card-category">History</div>
+                        <h3 class="card-title">Sapiens</h3>
+                        <div class="card-footer"><span class="price">$22.00</span> <button class="add-cart-btn">Add</button></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image"><i class="ri-book-2-fill"></i></div>
+                    <div class="card-info">
+                        <div class="card-category">Science</div>
+                        <h3 class="card-title">Thinking Fast</h3>
+                        <div class="card-footer"><span class="price">$19.00</span> <button class="add-cart-btn">Add</button></div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image"><i class="ri-book-2-fill"></i></div>
+                    <div class="card-info">
+                        <div class="card-category">Classic</div>
+                        <h3 class="card-title">1984</h3>
+                        <div class="card-footer"><span class="price">$14.00</span> <button class="add-cart-btn">Add</button></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image"><i class="ri-book-2-fill"></i></div>
+                    <div class="card-info">
+                        <div class="card-category">Philosophy</div>
+                        <h3 class="card-title">Meditations</h3>
+                        <div class="card-footer"><span class="price">$12.00</span> <button class="add-cart-btn">Add</button></div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="product-card">
-            <div class="card-image"><i class="ri-book-2-fill"></i></div>
-            <div class="card-info">
-              <div class="card-category">Science</div>
-              <h3 class="card-title">Thinking Fast</h3>
-              <div class="card-footer">
-                <span class="price">$19.00</span>
-                <button class="add-cart-btn">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="card-image"><i class="ri-book-2-fill"></i></div>
-            <div class="card-info">
-              <div class="card-category">Classic</div>
-              <h3 class="card-title">1984</h3>
-              <div class="card-footer">
-                <span class="price">$14.00</span>
-                <button class="add-cart-btn">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="card-image"><i class="ri-book-2-fill"></i></div>
-            <div class="card-info">
-              <div class="card-category">Philosophy</div>
-              <h3 class="card-title">Meditations</h3>
-              <div class="card-footer">
-                <span class="price">$12.00</span>
-                <button class="add-cart-btn">Add</button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- NEWSLETTER -->
     <section class="newsletter">
-      <div class="container">
-        <h2>Join Our Community</h2>
-        <p>
-          Subscribe to get the latest book news, interviews, and exclusive
-          offers.
-        </p>
-        <form
-          class="newsletter-form"
-          onsubmit="event.preventDefault(); alert('Subscribed!');"
-        >
-          <input type="email" placeholder="Enter your email address" required />
-          <button type="submit" class="btn-primary">Subscribe</button>
-        </form>
-      </div>
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to get the latest book news, interviews, and exclusive offers.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <a href="#" class="logo" style="color: white; margin-bottom: 1rem"
-              ><i class="ri-book-open-line"></i> Lumina<span>Books</span></a
-            >
-            <p>
-              Your destination for the world's best stories. We bring the
-              library to your doorstep.
-            </p>
-          </div>
-          <div class="footer-col">
-            <h4>Shop</h4>
-            <ul class="footer-links">
-              <li><a href="#">Bestsellers</a></li>
-              <li><a href="#">New Arrivals</a></li>
-              <li><a href="#">Genres</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Support</h4>
-            <ul class="footer-links">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Shipping</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <div class="social-icons">
-              <a href="#"><i class="ri-twitter-x-line"></i></a>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-              <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 1rem;"><i class="ri-book-open-line"></i> Lumina<span>Books</span></a>
+                    <p>Your destination for the world's best stories. We bring the library to your doorstep.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Bestsellers</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Genres</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div style="border-top: 1px solid #222; padding-top: 2rem; text-align: center; color: #666; font-size: 0.85rem;">
+                <p>&copy; 2024 Lumina Books. All rights reserved. Built for pure web demo.</p>
+            </div>
         </div>
-        <div
-          style="
-            border-top: 1px solid #222;
-            padding-top: 2rem;
-            text-align: center;
-            color: #666;
-            font-size: 0.85rem;
-          "
-        >
-          <p>
-            &copy; 2025 Lumina Books. All rights reserved. Built for pure web
-            demo.
-          </p>
-        </div>
-      </div>
     </footer>
 
     <!-- HIDDEN OVERLAYS -->
@@ -408,149 +246,63 @@
 
     <!-- CART SIDEBAR -->
     <div class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h3>Your Cart</h3>
-        <button class="close-cart" id="close-cart-btn">
-          <i class="ri-close-line"></i>
-        </button>
-      </div>
-      <div class="cart-items" id="cart-items-container">
-        <div style="text-align: center; color: #999; margin-top: 3rem">
-          <i
-            class="ri-shopping-basket-2-line"
-            style="
-              font-size: 3rem;
-              margin-bottom: 1rem;
-              display: block;
-              opacity: 0.3;
-            "
-          ></i>
-          <p>Your cart is currently empty.</p>
-          <button
-            class="btn-primary"
-            style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.9rem"
-          >
-            Start Shopping
-          </button>
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart-btn"><i class="ri-close-line"></i></button>
         </div>
-      </div>
-      <div class="cart-footer">
-        <div class="cart-total">
-          <span>Subtotal:</span> <span id="cart-subtotal">$0.00</span>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items injected by JS -->
         </div>
-        <button class="checkout-btn">Proceed to Checkout</button>
-      </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Subtotal:</span> <span id="cart-subtotal">$0.00</span></div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
     </div>
 
     <!-- PRODUCT MODAL -->
     <div class="product-modal" id="product-modal">
-      <button class="close-modal" id="close-modal-btn">
-        <i class="ri-close-line"></i>
-      </button>
-      <div class="modal-content">
-        <div class="modal-image">
-          <i class="ri-book-2-fill" style="font-size: 8rem; color: #ddd"></i>
+        <button class="close-modal" id="close-modal-btn"><i class="ri-close-line"></i></button>
+        <div class="modal-content">
+            <div class="modal-image">
+                <i class="ri-book-2-fill" style="font-size: 8rem; color: #ddd;"></i>
+            </div>
+            <div class="modal-details">
+                <span class="card-category" id="modal-category">Fiction</span>
+                <h2 style="font-size: 2.2rem; margin: 0.5rem 0; line-height: 1.2;" id="modal-title">Book Title</h2>
+                <p style="color: #777; margin-bottom: 1rem; font-family:'Merriweather',serif; font-style:italic;" id="modal-author">Author Name</p>
+                <div style="color: #FFB800; margin-bottom: 1.5rem;" id="modal-rating">⭐⭐⭐⭐⭐ <span style="color:#999; font-size:0.9rem;">(120 reviews)</span></div>
+                
+                <h3 class="price" style="font-size: 2rem; margin-bottom: 1.5rem;" id="modal-price">$24.99</h3>
+                
+                <p style="color: #555; line-height: 1.7; margin-bottom: 2.5rem;" id="modal-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                </p>
+
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn-primary" style="flex: 2; justify-content: center;"><i class="ri-shopping-bag-line"></i> Add to Cart</button>
+                    <button class="icon-btn" style="border: 1px solid #ddd; border-radius: 8px; width: 56px; height: 50px;"><i class="ri-heart-line"></i></button>
+                </div>
+            </div>
         </div>
-        <div class="modal-details">
-          <span class="card-category" id="modal-category">Fiction</span>
-          <h2
-            style="font-size: 2.2rem; margin: 0.5rem 0; line-height: 1.2"
-            id="modal-title"
-          >
-            Book Title
-          </h2>
-          <p
-            style="
-              color: #777;
-              margin-bottom: 1rem;
-              font-family: 'Merriweather', serif;
-              font-style: italic;
-            "
-            id="modal-author"
-          >
-            Author Name
-          </p>
-          <div style="color: #ffb800; margin-bottom: 1.5rem" id="modal-rating">
-            ⭐⭐⭐⭐⭐
-            <span style="color: #999; font-size: 0.9rem">(120 reviews)</span>
-          </div>
-
-          <h3
-            class="price"
-            style="font-size: 2rem; margin-bottom: 1.5rem"
-            id="modal-price"
-          >
-            $24.99
-          </h3>
-
-          <p
-            style="color: #555; line-height: 1.7; margin-bottom: 2.5rem"
-            id="modal-desc"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-
-          <div style="display: flex; gap: 1rem">
-            <button
-              class="btn-primary"
-              style="flex: 2; justify-content: center"
-            >
-              <i class="ri-shopping-bag-line"></i> Add to Cart
-            </button>
-            <button
-              class="icon-btn"
-              style="
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                width: 56px;
-                height: 50px;
-              "
-            >
-              <i class="ri-heart-line"></i>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- AUTH MODAL -->
     <div class="auth-modal" id="auth-modal">
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 2rem;
-        "
-      >
-        <h2 style="font-size: 1.5rem">Welcome Back</h2>
-        <button
-          class="icon-btn"
-          onclick="document.getElementById('auth-modal').classList.remove('active'); document.getElementById('overlay').classList.remove('active');"
-        >
-          <i class="ri-close-line"></i>
-        </button>
-      </div>
-      <form
-        class="auth-form"
-        onsubmit="event.preventDefault(); alert('Logged in!');"
-      >
-        <input type="text" placeholder="Username or Email" required />
-        <input type="password" placeholder="Password" required />
-        <button
-          type="submit"
-          class="btn-primary"
-          style="width: 100%; justify-content: center"
-        >
-          Log In
-        </button>
-      </form>
-      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #777">
-        Don't have an account?
-        <a href="#" style="color: var(--primary); font-weight: 600">Sign up</a>
-      </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.5rem;">Welcome Back</h2>
+            <button class="icon-btn" onclick="document.getElementById('auth-modal').classList.remove('active'); document.getElementById('overlay').classList.remove('active');"><i class="ri-close-line"></i></button>
+        </div>
+        <form class="auth-form" onsubmit="event.preventDefault(); alert('Logged in!');">
+            <input type="text" placeholder="Username or Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Log In</button>
+        </form>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #777;">
+            Don't have an account? <a href="#" style="color: var(--primary); font-weight: 600;">Sign up</a>
+        </p>
     </div>
-  </body>
+
+    <!-- 4. External JS Link -->
+    <script src="script.js"></script>
+</body>
 </html>
