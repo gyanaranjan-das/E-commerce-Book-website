@@ -25,13 +25,12 @@
     <!-- NAVIGATION BAR -->
     <nav class="navbar">
       <div class="container">
-        <!-- 1. Brand / Logo -->
-        <a href="#" class="logo">
-          <i class="ri-book-open-line"></i>
-          Lumina<span>Books</span>
-        </a>
+        <!-- Logo -->
+        <a href="#" class="logo"
+          ><i class="ri-book-open-line"></i> Lumina<span>Books</span></a
+        >
 
-        <!-- 2. Middle Navigation Links (Desktop) -->
+        <!-- Links -->
         <ul class="nav-links">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#shop">Shop</a></li>
@@ -39,47 +38,32 @@
           <li><a href="#about">About</a></li>
         </ul>
 
-        <!-- 3. Action Hub (Right Side) -->
+        <!-- Actions -->
         <div class="nav-actions">
-          <!-- Search Bar -->
           <div class="search-wrapper">
+            <button class="icon-btn"><i class="ri-search-line"></i></button>
             <input
               type="text"
               id="search-input"
               placeholder="Search books..."
             />
-            <button class="icon-btn" id="search-btn">
-              <i class="ri-search-line"></i>
-            </button>
           </div>
 
-          <!-- Theme Toggle -->
-          <button
-            class="icon-btn"
-            id="theme-toggle"
-            aria-label="Toggle Dark Mode"
-          >
+          <button class="icon-btn" id="theme-toggle">
             <i class="ri-moon-line"></i>
           </button>
-
-          <!-- Wishlist -->
-          <button class="icon-btn" id="wishlist-btn" aria-label="Wishlist">
+          <button class="icon-btn" id="wishlist-btn">
             <i class="ri-heart-line"></i>
           </button>
 
-          <!-- Cart with Counter -->
-          <button class="icon-btn" id="cart-btn" aria-label="Open Cart">
+          <button class="icon-btn" id="cart-btn">
             <i class="ri-shopping-bag-line"></i>
-            <!-- This span is CRITICAL for JS to update cart count -->
             <span class="badge" id="cart-count">0</span>
           </button>
 
-          <!-- User Profile -->
-          <button class="icon-btn" id="user-btn" aria-label="User Account">
+          <button class="icon-btn" id="user-btn">
             <i class="ri-user-line"></i>
           </button>
-
-          <!-- Mobile Menu Hamburger (Visible only on small screens) -->
           <button class="icon-btn mobile-toggle" id="mobile-menu-btn">
             <i class="ri-menu-line"></i>
           </button>
@@ -98,18 +82,32 @@
             Explore our curated collection of bestsellers, timeless classics,
             and hidden gems tailored just for you.
           </p>
-          <a href="#shop" class="btn-primary">Start Reading</a>
+          <a href="#shop" class="btn-primary"
+            >Start Reading <i class="ri-arrow-right-line"></i
+          ></a>
         </div>
 
         <div class="hero-visual">
-          <!-- Placeholder for the slider or featured book -->
           <div class="book-placeholder">
             <i
               class="ri-book-3-line"
-              style="font-size: 4rem; margin-bottom: 1rem"
+              style="font-size: 5rem; margin-bottom: 1rem; opacity: 0.9"
             ></i>
-            <h3>Book of the Month</h3>
-            <p style="font-size: 0.9rem; opacity: 0.8">The Art of Code</p>
+            <h3 style="font-size: 1.5rem">Book of the Month</h3>
+            <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 0.5rem">
+              The Art of Code
+            </p>
+            <div
+              style="
+                margin-top: 2rem;
+                font-size: 0.9rem;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 5px 15px;
+                border-radius: 20px;
+              "
+            >
+              Featured
+            </div>
           </div>
         </div>
       </div>
@@ -119,7 +117,6 @@
     <section class="category-strip">
       <div class="container">
         <div class="category-list" id="category-filters">
-          <!-- We add 'active' to 'All' by default -->
           <button class="cat-pill active" data-category="all">All Books</button>
           <button class="cat-pill" data-category="trending">🔥 Trending</button>
           <button class="cat-pill" data-category="fiction">Fiction</button>
@@ -140,22 +137,32 @@
     <!-- MAIN SHOP SECTION -->
     <main class="shop-section" id="shop">
       <div class="container shop-layout">
-        <!-- SIDEBAR FILTERS -->
+        <!-- SIDEBAR -->
         <aside class="sidebar">
-          <!-- Genre Filter -->
           <div class="filter-group">
-            <div class="filter-title">Genres</div>
+            <div class="filter-title">
+              Genres <i class="ri-arrow-down-s-line"></i>
+            </div>
             <ul class="filter-list" id="sidebar-filters">
-              <!-- JS will populate active states, but here is the structure -->
-              <li class="active">All Genres <span class="count">120</span></li>
-              <li>Fiction <span class="count">45</span></li>
-              <li>Non-Fiction <span class="count">30</span></li>
-              <li>Sci-Fi <span class="count">15</span></li>
-              <li>History <span class="count">12</span></li>
+              <li class="active">
+                All Genres
+                <span
+                  style="
+                    font-size: 0.8rem;
+                    background: #f0f0f0;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                  "
+                  >120</span
+                >
+              </li>
+              <li>Fiction <span>45</span></li>
+              <li>Non-Fiction <span>30</span></li>
+              <li>Sci-Fi <span>15</span></li>
+              <li>History <span>12</span></li>
             </ul>
           </div>
 
-          <!-- Price Filter -->
           <div class="filter-group">
             <div class="filter-title">Price Range</div>
             <div class="price-slider-container">
@@ -169,27 +176,30 @@
               />
               <div class="price-values">
                 <span>$0</span>
-                <span id="price-value">$100</span>
+                <span
+                  id="price-value"
+                  style="font-weight: 700; color: var(--primary)"
+                  >$100</span
+                >
               </div>
             </div>
           </div>
 
-          <!-- Rating Filter -->
           <div class="filter-group">
             <div class="filter-title">Rating</div>
             <ul class="filter-list">
-              <li>⭐⭐⭐⭐⭐ (12)</li>
-              <li>⭐⭐⭐⭐ & Up (45)</li>
-              <li>⭐⭐⭐ & Up (80)</li>
+              <li><span style="color: #ffb800">⭐⭐⭐⭐⭐</span> (12)</li>
+              <li><span style="color: #ffb800">⭐⭐⭐⭐</span> & Up (45)</li>
             </ul>
           </div>
         </aside>
 
-        <!-- PRODUCT GRID AREA -->
+        <!-- PRODUCT GRID -->
         <section class="shop-content">
-          <!-- Header: Count & Sort -->
           <div class="shop-header">
-            <h2 id="result-count">Showing all books</h2>
+            <h2 id="result-count" style="font-size: 1.25rem">
+              Showing all books
+            </h2>
             <select class="sort-select" id="sort-select">
               <option value="popularity">Sort by: Popularity</option>
               <option value="newest">Sort by: Newest</option>
@@ -198,15 +208,11 @@
             </select>
           </div>
 
-          <!-- The Grid: JS will inject cards here -->
           <div class="products-grid" id="product-grid">
-            <!-- STATIC EXAMPLE CARD 1 (For visual check) -->
+            <!-- Card 1 -->
             <div class="product-card">
               <div class="card-image">
-                <!-- Placeholder image -->
-                <div style="font-size: 3rem; color: #ccc">
-                  <i class="ri-book-2-fill"></i>
-                </div>
+                <i class="ri-book-2-fill"></i>
                 <button class="wishlist-icon">
                   <i class="ri-heart-line"></i>
                 </button>
@@ -218,18 +224,16 @@
                 <div class="card-footer">
                   <span class="price">$24.99</span>
                   <button class="add-cart-btn">
-                    <i class="ri-shopping-cart-2-line"></i> Add
+                    <i class="ri-add-line"></i> Add
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- STATIC EXAMPLE CARD 2 -->
+            <!-- Card 2 -->
             <div class="product-card">
               <div class="card-image">
-                <div style="font-size: 3rem; color: #ccc">
-                  <i class="ri-book-2-fill"></i>
-                </div>
+                <i class="ri-book-2-fill"></i>
                 <button class="wishlist-icon">
                   <i class="ri-heart-line"></i>
                 </button>
@@ -241,18 +245,16 @@
                 <div class="card-footer">
                   <span class="price">$18.50</span>
                   <button class="add-cart-btn">
-                    <i class="ri-shopping-cart-2-line"></i> Add
+                    <i class="ri-add-line"></i> Add
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- STATIC EXAMPLE CARD 3 -->
+            <!-- Card 3 -->
             <div class="product-card">
               <div class="card-image">
-                <div style="font-size: 3rem; color: #ccc">
-                  <i class="ri-book-2-fill"></i>
-                </div>
+                <i class="ri-book-2-fill"></i>
                 <button class="wishlist-icon">
                   <i class="ri-heart-line"></i>
                 </button>
@@ -264,7 +266,7 @@
                 <div class="card-footer">
                   <span class="price">$16.00</span>
                   <button class="add-cart-btn">
-                    <i class="ri-shopping-cart-2-line"></i> Add
+                    <i class="ri-add-line"></i> Add
                   </button>
                 </div>
               </div>
@@ -274,99 +276,53 @@
       </div>
     </main>
 
+    <!-- RECOMMENDATIONS -->
     <section class="recommendations">
       <div class="container">
         <h2 class="section-title-center">Recommended For You</h2>
-        <!-- Reuse product grid styles -->
         <div class="products-grid">
-          <!-- Static Rec Card 1 -->
+          <!-- Static Rec Cards (Simplified) -->
           <div class="product-card">
-            <div class="card-image">
-              <div style="font-size: 3rem; color: #ccc">
-                <i class="ri-book-2-fill"></i>
-              </div>
-              <button class="wishlist-icon">
-                <i class="ri-heart-line"></i>
-              </button>
-            </div>
+            <div class="card-image"><i class="ri-book-2-fill"></i></div>
             <div class="card-info">
               <div class="card-category">History</div>
               <h3 class="card-title">Sapiens</h3>
-              <p class="card-author">Yuval Noah Harari</p>
               <div class="card-footer">
                 <span class="price">$22.00</span>
-                <button class="add-cart-btn">
-                  <i class="ri-shopping-cart-2-line"></i> Add
-                </button>
+                <button class="add-cart-btn">Add</button>
               </div>
             </div>
           </div>
-
-          <!-- Static Rec Card 2 -->
           <div class="product-card">
-            <div class="card-image">
-              <div style="font-size: 3rem; color: #ccc">
-                <i class="ri-book-2-fill"></i>
-              </div>
-              <button class="wishlist-icon">
-                <i class="ri-heart-line"></i>
-              </button>
-            </div>
-            <div class="card-info">
-              <div class="card-category">Design</div>
-              <h3 class="card-title">Thinking, Fast and Slow</h3>
-              <p class="card-author">Daniel Kahneman</p>
-              <div class="card-footer">
-                <span class="price">$19.99</span>
-                <button class="add-cart-btn">
-                  <i class="ri-shopping-cart-2-line"></i> Add
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Static Rec Card 3 -->
-          <div class="product-card">
-            <div class="card-image">
-              <div style="font-size: 3rem; color: #ccc">
-                <i class="ri-book-2-fill"></i>
-              </div>
-              <button class="wishlist-icon">
-                <i class="ri-heart-line"></i>
-              </button>
-            </div>
+            <div class="card-image"><i class="ri-book-2-fill"></i></div>
             <div class="card-info">
               <div class="card-category">Science</div>
-              <h3 class="card-title">A Brief History of Time</h3>
-              <p class="card-author">Stephen Hawking</p>
+              <h3 class="card-title">Thinking Fast</h3>
               <div class="card-footer">
-                <span class="price">$15.50</span>
-                <button class="add-cart-btn">
-                  <i class="ri-shopping-cart-2-line"></i> Add
-                </button>
+                <span class="price">$19.00</span>
+                <button class="add-cart-btn">Add</button>
               </div>
             </div>
           </div>
-
-          <!-- Static Rec Card 4 -->
           <div class="product-card">
-            <div class="card-image">
-              <div style="font-size: 3rem; color: #ccc">
-                <i class="ri-book-2-fill"></i>
-              </div>
-              <button class="wishlist-icon">
-                <i class="ri-heart-line"></i>
-              </button>
-            </div>
+            <div class="card-image"><i class="ri-book-2-fill"></i></div>
             <div class="card-info">
-              <div class="card-category">Fiction</div>
-              <h3 class="card-title">The Alchemist</h3>
-              <p class="card-author">Paulo Coelho</p>
+              <div class="card-category">Classic</div>
+              <h3 class="card-title">1984</h3>
               <div class="card-footer">
                 <span class="price">$14.00</span>
-                <button class="add-cart-btn">
-                  <i class="ri-shopping-cart-2-line"></i> Add
-                </button>
+                <button class="add-cart-btn">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="card-image"><i class="ri-book-2-fill"></i></div>
+            <div class="card-info">
+              <div class="card-category">Philosophy</div>
+              <h3 class="card-title">Meditations</h3>
+              <div class="card-footer">
+                <span class="price">$12.00</span>
+                <button class="add-cart-btn">Add</button>
               </div>
             </div>
           </div>
@@ -374,7 +330,7 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER BANNER -->
+    <!-- NEWSLETTER -->
     <section class="newsletter">
       <div class="container">
         <h2>Join Our Community</h2>
@@ -396,40 +352,31 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
-          <!-- Col 1 -->
           <div class="footer-col">
-            <a href="#" class="logo" style="color: white; margin-bottom: 1rem">
-              <i class="ri-book-open-line"></i> Lumina<span>Books</span>
-            </a>
-            <p style="color: #aaa; line-height: 1.6">
+            <a href="#" class="logo" style="color: white; margin-bottom: 1rem"
+              ><i class="ri-book-open-line"></i> Lumina<span>Books</span></a
+            >
+            <p>
               Your destination for the world's best stories. We bring the
               library to your doorstep.
             </p>
           </div>
-
-          <!-- Col 2 -->
           <div class="footer-col">
             <h4>Shop</h4>
             <ul class="footer-links">
               <li><a href="#">Bestsellers</a></li>
               <li><a href="#">New Arrivals</a></li>
               <li><a href="#">Genres</a></li>
-              <li><a href="#">Textbooks</a></li>
             </ul>
           </div>
-
-          <!-- Col 3 -->
           <div class="footer-col">
             <h4>Support</h4>
             <ul class="footer-links">
               <li><a href="#">FAQ</a></li>
-              <li><a href="#">Shipping & Returns</a></li>
-              <li><a href="#">Order Status</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
-
-          <!-- Col 4 -->
           <div class="footer-col">
             <h4>Connect</h4>
             <div class="social-icons">
@@ -439,14 +386,171 @@
             </div>
           </div>
         </div>
-
-        <div class="copyright">
+        <div
+          style="
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+          "
+        >
           <p>
-            &copy; 2024 Lumina Books. All rights reserved. Built for pure web
+            &copy; 2025 Lumina Books. All rights reserved. Built for pure web
             demo.
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- HIDDEN OVERLAYS -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="close-cart-btn">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cart-items-container">
+        <div style="text-align: center; color: #999; margin-top: 3rem">
+          <i
+            class="ri-shopping-basket-2-line"
+            style="
+              font-size: 3rem;
+              margin-bottom: 1rem;
+              display: block;
+              opacity: 0.3;
+            "
+          ></i>
+          <p>Your cart is currently empty.</p>
+          <button
+            class="btn-primary"
+            style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.9rem"
+          >
+            Start Shopping
+          </button>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Subtotal:</span> <span id="cart-subtotal">$0.00</span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div class="product-modal" id="product-modal">
+      <button class="close-modal" id="close-modal-btn">
+        <i class="ri-close-line"></i>
+      </button>
+      <div class="modal-content">
+        <div class="modal-image">
+          <i class="ri-book-2-fill" style="font-size: 8rem; color: #ddd"></i>
+        </div>
+        <div class="modal-details">
+          <span class="card-category" id="modal-category">Fiction</span>
+          <h2
+            style="font-size: 2.2rem; margin: 0.5rem 0; line-height: 1.2"
+            id="modal-title"
+          >
+            Book Title
+          </h2>
+          <p
+            style="
+              color: #777;
+              margin-bottom: 1rem;
+              font-family: 'Merriweather', serif;
+              font-style: italic;
+            "
+            id="modal-author"
+          >
+            Author Name
+          </p>
+          <div style="color: #ffb800; margin-bottom: 1.5rem" id="modal-rating">
+            ⭐⭐⭐⭐⭐
+            <span style="color: #999; font-size: 0.9rem">(120 reviews)</span>
+          </div>
+
+          <h3
+            class="price"
+            style="font-size: 2rem; margin-bottom: 1.5rem"
+            id="modal-price"
+          >
+            $24.99
+          </h3>
+
+          <p
+            style="color: #555; line-height: 1.7; margin-bottom: 2.5rem"
+            id="modal-desc"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+
+          <div style="display: flex; gap: 1rem">
+            <button
+              class="btn-primary"
+              style="flex: 2; justify-content: center"
+            >
+              <i class="ri-shopping-bag-line"></i> Add to Cart
+            </button>
+            <button
+              class="icon-btn"
+              style="
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                width: 56px;
+                height: 50px;
+              "
+            >
+              <i class="ri-heart-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-modal" id="auth-modal">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+        "
+      >
+        <h2 style="font-size: 1.5rem">Welcome Back</h2>
+        <button
+          class="icon-btn"
+          onclick="document.getElementById('auth-modal').classList.remove('active'); document.getElementById('overlay').classList.remove('active');"
+        >
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <form
+        class="auth-form"
+        onsubmit="event.preventDefault(); alert('Logged in!');"
+      >
+        <input type="text" placeholder="Username or Email" required />
+        <input type="password" placeholder="Password" required />
+        <button
+          type="submit"
+          class="btn-primary"
+          style="width: 100%; justify-content: center"
+        >
+          Log In
+        </button>
+      </form>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #777">
+        Don't have an account?
+        <a href="#" style="color: var(--primary); font-weight: 600">Sign up</a>
+      </p>
+    </div>
   </body>
 </html>
