@@ -1,4 +1,10 @@
-/* --- RESET & VARIABLES --- */
+html{
+    scroll-behavior:smooth;
+}
+
+section,header,main,footer{
+    scroll-margin-bottom: smooth;
+}
 :root {
     --primary: #4A6CF7;
     --primary-dark: #324bbd;
